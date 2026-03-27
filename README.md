@@ -50,7 +50,7 @@ receiver_email = "RECEIVER_EMAIL"
 ## ⚙️ Instructions
 
 1. Clone the repository:
-git clone https://github.com/YOUR_USERNAME/motion-detection-system.git
+git clone https://github.com/ariogifani-code/motion-detection-system.git
 
 2. Install dependencies:
 pip3 install opencv-python

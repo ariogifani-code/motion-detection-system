@@ -46,6 +46,12 @@ sender_email = "YOUR_EMAIL"
 sender_password = "YOUR_APP_PASSWORD" (ex.Gmail App Password - NOT your real Password)
 receiver_email = "RECEIVER_EMAIL"
 
+## 📁 Output Directory
+
+Captured images and videos are saved in the `SavedMotion/` folder.
+
+The folder will be automatically created if it does not exist.
+
 ---
 
 ## ⚙️ Instructions

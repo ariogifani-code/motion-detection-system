@@ -168,27 +168,34 @@ while True:
         email_time = time.time()
         if (email_time - last_email_time) > cooldown:
             msg = MIMEText(f"MOTION DETECTED ALERT\n\nA motion event has been detected by your monitoring system.\n\nEvent Details\n\nEvent ID:\t{event_Counter}\nDate:\t\t{clock_Date}\nTime:\t\t{clock_Time}\n\nStatus:\t\t\tMotion Detected\nCamera ID:\tDefault Camera (0)\n\nThis is an automated message from your Motion Detection System.")
+
+            # -------------------------------
+            # EMAIL CONFIGURATION (USER INPUT REQUIRED)
+            # -------------------------------
+            
             msg["Subject"] = "Motion Alert"
-            msg["From"] = "motionalertsystem92@gmail.com"
-            msg["To"] = "ariogifani@gmail.com"
+            msg["From"] = "SENDER_EMAIL"
+            msg["To"] = "RECEIVER_EMAIL"
 
             server = smtplib.SMTP("smtp.gmail.com", 587)
             server.starttls()
 
-            server.login("motionalertsystem92@gmail.com", "amganfzvnnbvovgv")
+            server.login("SENDER_EMAIL", "SENDER_APP_PASSWORD")
 
             server.send_message(msg)
 
             server.quit() 
-            last_email_time = email_time                    
+            last_email_time = email_time 
+
+        
 
         #Take image screenshot when motion is detected and save on dedicated directory
         if(mode == "image"):
-            cv2.imwrite(f"/Users/ariogifani/Desktop/MotionDetection_System/SavedMotion/motion_detected_{current_Time:.1f}_{clock_Date_Start}.jpg", curr_Frame)
+            cv2.imwrite(f"SavedMotion/motion_detected_{current_Time:.1f}_{clock_Date_Start}.jpg", curr_Frame)
 
         #Start video recording once motion has begun
         if (mode == "video"):
-            filename = f"/Users/ariogifani/Desktop/MotionDetection_System/SavedMotion/motion_detected_{event_Counter}_{clock_Date_Start}.avi"
+            filename = f"SavedMotion/motion_detected_{event_Counter}_{clock_Date_Start}.avi"
             fourcc = cv2.VideoWriter_fourcc(*'XVID')
             video_Writer = cv2.VideoWriter(filename, fourcc, 30, (width, height))
             is_Recording = True

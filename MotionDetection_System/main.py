@@ -29,8 +29,8 @@ open("motion_log.txt", "a")
 #Initialize webcam capture
 cam = cv2.VideoCapture(0)
 
-#Mode Selection: "image", "video", or "None"
-mode = "None"
+#Mode Selection: "image" (default), "video", or "None"
+mode = "image"
 
 #Video recording control variables
 video_Writer = None

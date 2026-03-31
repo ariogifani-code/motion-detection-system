@@ -173,14 +173,19 @@ while True:
             # EMAIL CONFIGURATION (USER INPUT REQUIRED)
             # -------------------------------
             
+            sender_email = "SENDER_EMAIL"
+            sender_password = "YOUR_APP_PASSWORD"
+            receiver_email = "RECEIVER_EMAIL"
+            # -------------------------------
+            
             msg["Subject"] = "Motion Alert"
-            msg["From"] = "SENDER_EMAIL"
-            msg["To"] = "RECEIVER_EMAIL"
+            msg["From"] = sender_email
+            msg["To"] = receiver_email
 
             server = smtplib.SMTP("smtp.gmail.com", 587)
             server.starttls()
 
-            server.login("SENDER_EMAIL", "SENDER_APP_PASSWORD")
+            server.login(sender_email, sender_password)
 
             server.send_message(msg)
 

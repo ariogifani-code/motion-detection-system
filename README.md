@@ -39,7 +39,7 @@ It detects motion through a webcam frames, logs events, captures images/videos, 
 
 To enable email notifications, you must provide your own email.
 
-1. Open `main.py`
+1. Open `motion_detector.py`
 
 2. Locate the email configuration section:
 

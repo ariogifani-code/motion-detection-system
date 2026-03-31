@@ -66,7 +66,7 @@ last_Detect_Time = None
 
 #Email notification cooldown control (prevents email spamming)
 last_email_time = 0
-cooldown = 30
+cooldown = 50
 
 
 #Main processing loop: constantly captures and compares frames, detects motion, and handles events
@@ -173,9 +173,9 @@ while True:
             # EMAIL CONFIGURATION (USER INPUT REQUIRED)
             # -------------------------------
             
-            sender_email = "motionalertsystem92@gmail.com"
-            sender_password = "amganfzvnnbvovgv"
-            receiver_email = "ariogifani@gmail.com"
+            sender_email = "SENDER_EMAIL"
+            sender_password = "YOUR_APP_PASSWORD"
+            receiver_email = "RECEIVER_EMAIL"
             # -------------------------------
             
             msg["Subject"] = "Motion Alert"
@@ -196,11 +196,11 @@ while True:
 
         #Take image screenshot when motion is detected and save on dedicated directory
         if(mode == "image"):
-            cv2.imwrite(f"SavedMotion/motion_detected_{current_Time:.1f}_{clock_Date_Start}.jpg", curr_Frame)
+            cv2.imwrite(f"motion-detection-system/SavedMotion/motion_detected_{current_Time:.1f}_{clock_Date_Start}.jpg", curr_Frame)
 
         #Start video recording once motion has begun
         if (mode == "video"):
-            filename = f"SavedMotion/motion_detected_{event_Counter}_{clock_Date_Start}.avi"
+            filename = f"motion-detection-system/SavedMotion/motion_detected_{event_Counter}_{clock_Date_Start}.avi"
             fourcc = cv2.VideoWriter_fourcc(*'XVID')
             video_Writer = cv2.VideoWriter(filename, fourcc, 30, (width, height))
             is_Recording = True

@@ -63,10 +63,13 @@ The folder will be automatically created if it does not exist.
 ## Instructions
 
 1. Clone the repository:
-git clone https://github.com/ariogifani-code/motion-detection-system.git
+   
+      git clone https://github.com/ariogifani-code/motion-detection-system.git
 
-2. Install dependencies:
-pip3 install opencv-python
+3. Install dependencies:
+   
+      pip install opencv-python
 
-3. Run the Program:
-python3 motion_detector.py
+5. Run the Program:
+   
+      python motion_detector.py

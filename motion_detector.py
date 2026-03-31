@@ -23,6 +23,7 @@ import time
 import datetime
 import smtplib
 from email.mime.text import MIMEText
+import os
 
 open("motion_log.txt", "a")
 
@@ -67,6 +68,10 @@ last_Detect_Time = None
 #Email notification cooldown control (prevents email spamming)
 last_email_time = 0
 cooldown = 50
+
+#Make Directory to save media images/videos in folder
+media_folder = "SavedMedia"
+os.makedirs(media_folder, exist_ok=True)
 
 
 #Main processing loop: constantly captures and compares frames, detects motion, and handles events
@@ -196,13 +201,16 @@ while True:
 
         #Take image screenshot when motion is detected and save on dedicated directory
         if(mode == "image"):
-            cv2.imwrite(f"motion-detection-system/SavedMotion/motion_detected_{current_Time:.1f}_{clock_Date_Start}.jpg", curr_Frame)
+            imagefile = f"motion_detected_{current_Time:.1f}_{clock_Date_Start}.jpg"
+            imagepath = os.path.join(media_folder, imagepath)
+            cv2.imwrite(imagepath, curr_Frame)
 
         #Start video recording once motion has begun
         if (mode == "video"):
-            filename = f"motion-detection-system/SavedMotion/motion_detected_{event_Counter}_{clock_Date_Start}.avi"
+            videofile = f"motion_detected_{event_Counter}_{clock_Date_Start}.avi"
+            videopath = os.path.join(media_folder, videofile)
             fourcc = cv2.VideoWriter_fourcc(*'XVID')
-            video_Writer = cv2.VideoWriter(filename, fourcc, 30, (width, height))
+            video_Writer = cv2.VideoWriter(videopath, fourcc, 30, (width, height))
             is_Recording = True
             
 

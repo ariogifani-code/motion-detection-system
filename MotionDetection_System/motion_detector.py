@@ -173,9 +173,9 @@ while True:
             # EMAIL CONFIGURATION (USER INPUT REQUIRED)
             # -------------------------------
             
-            sender_email = "SENDER_EMAIL"
-            sender_password = "YOUR_APP_PASSWORD"
-            receiver_email = "RECEIVER_EMAIL"
+            sender_email = "motionalertsystem92@gmail.com"
+            sender_password = "amganfzvnnbvovgv"
+            receiver_email = "ariogifani@gmail.com"
             # -------------------------------
             
             msg["Subject"] = "Motion Alert"

@@ -68,8 +68,8 @@ The folder will be automatically created if it does not exist.
 
 3. Install dependencies:
    
-      pip install opencv-python
+      pip3 install opencv-python
 
 5. Run the Program:
    
-      python motion_detector.py
+      python3 motion_detector.py

@@ -42,9 +42,14 @@ To enable email notifications, you must provide your own email.
 1. Open `main.py`
 
 2. Locate the email configuration section:
+
    
 sender_email = "YOUR_EMAIL"
+
+
 sender_password = "YOUR_APP_PASSWORD" (ex.Gmail App Password - NOT your real Password)
+
+
 receiver_email = "RECEIVER_EMAIL"
 
 ## Output Directory
